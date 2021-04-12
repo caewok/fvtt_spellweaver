@@ -1,7 +1,7 @@
 {
   "name": "module",
-  "title": "New Module",
-  "description": "",
+  "title": "Spellweaver",
+  "description": "Spellweaver class for Foundry VTT",
   "version": "This is auto replaced",
   "library": "false",
   "manifestPlusVersion": "1.0.0",
@@ -9,9 +9,9 @@
   "compatibleCoreVersion": "0.7.9",
   "authors": [
     {
-      "name": "The League of Extraordinary FVTT Developers",
-      "url": "https://github.com/League-of-Foundry-Developers",
-      "discord": "discordID#0001"
+      "name": "Michael Enion",
+      "url": "https://github.com/caewok/fvtt_spellweaver",
+      "discord": "caewok#9192"
     }
   ],
   "dependencies": [
