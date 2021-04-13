@@ -1,6 +1,7 @@
-import { itemPatching } from './patching';
+import { itemPatching } from './patching.js';
 
 const MODULE_ID = 'spellweaver';
+const VERBOSE = true;
 
 /* ----------------
  * Initialize module
@@ -16,6 +17,7 @@ Hooks.once('init', async function() {
  * Do anything after initialization but before ready
  */
 Hooks.once('setup', async function() {
+  console.log(`${MODULE_ID}|Setting up.`);
   itemPatching();
 });
 
