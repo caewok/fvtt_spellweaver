@@ -1,4 +1,4 @@
-import { itemPatching } from './patching.ts';
+import { itemPatching } from './patching';
 
 const MODULE_ID = 'spellweaver';
 
