@@ -1,10 +1,12 @@
 import { itemPatching } from './scripts/patching.ts';
 
+const MODULE_ID = 'spellweaver';
+
 /* ----------------
  * Initialize module
  */
 Hooks.once('init', async function() {
-  console.log("spellweaver|Initializing.");
+  console.log(`${MODULE_ID}|Initializing.`);
   
 
 });
@@ -22,8 +24,8 @@ Hooks.once('setup', async function() {
  * When ready
  */
 Hooks.once('ready', async function() {
-  console.log("spellweaver|Readying.")
+  console.log(`${MODULE_ID}|Readying.`)
 
   if(!game.modules.get('lib-wrapper')?.active && game.user.isGM)
-        ui.notifications.error("Module spellweaver requires the 'libWrapper' module. Please install and activate it.");
+        ui.notifications.error(`Module ${MODULE_ID} requires the 'libWrapper' module. Please install and activate it.`);
 });
