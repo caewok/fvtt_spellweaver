@@ -7,14 +7,18 @@
   "manifestPlusVersion": "1.0.0",
   "minimumCoreVersion": "0.7.9",
   "compatibleCoreVersion": "0.7.9",
+  "systems": ["dnd5e"],
   "authors": [
     {
-      "name": "Michael Enion",
+      "name": "caewok",
       "url": "https://github.com/caewok/fvtt_spellweaver",
       "discord": "caewok#9192"
     }
   ],
   "dependencies": [
+    {
+      "name": "lib-wrapper"
+    }
 
   ],
   "conflicts": [
