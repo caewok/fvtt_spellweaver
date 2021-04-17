@@ -1,4 +1,4 @@
-import { doItemRoll } from "./itemhandling";
+import { doItemRoll } from "./itemhandling.js";
 /*
  * Patch item.roll() to intercept spellcasting rolls.
  */
