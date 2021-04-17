@@ -1,4 +1,4 @@
-import * as CONSTANTS from "./constants.js";
+import { CONSTANTS } from "./constants.js";
 export async function doItemRoll(wrapped, 
                                  options = { showFullCard: false, 
                                              createWorkflow: true, 

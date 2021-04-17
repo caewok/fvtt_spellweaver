@@ -1,5 +1,5 @@
 import { itemPatching } from './scripts/patching.js';
-import * as CONSTANTS from './scripts/constants.js';
+import { CONSTANTS } from "./scripts/constants.js";
 
 /* ----------------
  * Initialize module
