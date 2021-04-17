@@ -1,4 +1,4 @@
-import { itemPatching } from './patching.js';
+import { itemPatching } from './scripts/patching.js';
 
 const MODULE_ID = 'spellweaver';
 const VERBOSE = true;
