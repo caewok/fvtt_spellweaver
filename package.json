@@ -9,6 +9,7 @@
   "author": "caewok",
   "license": "MIT",
   "devDependencies": {
+    "@league-of-foundry-developers/foundry-vtt-types": "^0.7.9-6",
     "@types/node": "^14.14.41",
     "gulp": "^4.0.2",
     "gulp-typescript": "^6.0.0-alpha.1",

@@ -9,13 +9,15 @@
       "discord": "caewok#9192"
     }
   ],
-  "version": "0.0.1",
+  "version": "This is auto replaced",
+  "manifestPlusVersion": "1.0.0",
   "minimumCoreVersion": "0.7.9",
   "compatibleCoreVersion": "0.7.9",
-  "manifestPlusVersion": "1.0.0",
-  "url": "",
-  "manifest": "",
-  "download": "",
+  "systems": ["dnd5e"],
+  "author": "caewok",
+  "url": "This is auto replaced",
+  "manifest": "This is auto replaced",
+  "download": "This is auto replaced",
   "type": "module",
   "includes": [
     "./assets/**",
