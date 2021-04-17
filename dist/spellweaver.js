@@ -8,14 +8,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { itemPatching } from './scripts/patching.js';
-const MODULE_ID = 'spellweaver';
-const VERBOSE = true;
+import { CONSTANTS } from "./scripts/constants.js";
 /* ----------------
  * Initialize module
  */
 Hooks.once('init', function () {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(`${MODULE_ID}|Initializing.`);
+        console.log(`${CONSTANTS.MODULE_ID}|Initializing.`);
     });
 });
 /* ----------------
@@ -24,7 +23,7 @@ Hooks.once('init', function () {
  */
 Hooks.once('setup', function () {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(`${MODULE_ID}|Setting up.`);
+        console.log(`${CONSTANTS.MODULE_ID}|Setting up.`);
         itemPatching();
     });
 });
@@ -34,8 +33,8 @@ Hooks.once('setup', function () {
 Hooks.once('ready', function () {
     var _a;
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(`${MODULE_ID}|Readying.`);
+        console.log(`${CONSTANTS.MODULE_ID}|Readying.`);
         if (!((_a = game.modules.get('lib-wrapper')) === null || _a === void 0 ? void 0 : _a.active) && game.user.isGM)
-            ui.notifications.error(`Module ${MODULE_ID} requires the 'libWrapper' module. Please install and activate it.`);
+            ui.notifications.error(`Module ${CONSTANTS.MODULE_ID} requires the 'libWrapper' module. Please install and activate it.`);
     });
 });

@@ -8,9 +8,9 @@ export async function doItemRoll(wrapped,
                                           
                                              
   // check if this is a spell and who is rolling it
-	if("spell" === this_item.data.type && this_item.options.hasOwnProperty("actor")) {
+	if("spell" === this.data.type && this.options.hasOwnProperty("actor")) {
 		// options.actor.items is a Map
-		const has_spellweaver_class = [...this_item.options.actor.items].some(i => "class" === i.type && CONSTANTS.SPELLWEAVER_CLASSES.includes(i.data.name));
+		const has_spellweaver_class = [...this.options.actor.items].some(i => "class" === i.type && CONSTANTS.SPELLWEAVER_CLASSES.includes(i.data.name));
 		console.log(`${CONSTANTS.MODULE_ID}|Checking for spellweaver class.`);
 		if(has_spellweaver_class) {
 			console.log(`${CONSTANTS.MODULE_ID}|Spellweaver rolled a spell.`);
