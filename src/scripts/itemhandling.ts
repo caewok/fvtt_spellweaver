@@ -1,4 +1,4 @@
-import { CONSTANTS } from "./constants.js";
+import { CONSTANTS, log } from "./constants.js";
 export async function doItemRoll(wrapped, 
                                  options = { showFullCard: false, 
                                              createWorkflow: true, 
@@ -11,9 +11,9 @@ export async function doItemRoll(wrapped,
 	if("spell" === this.data.type && this.options.hasOwnProperty("actor")) {
 		// options.actor.items is a Map
 		const has_spellweaver_class = [...this.options.actor.items].some(i => "class" === i.type && CONSTANTS.SPELLWEAVER_CLASSES.includes(i.data.name));
-		console.log(`${CONSTANTS.MODULE_ID}|Checking for spellweaver class.`);
+		log(false, `Checking for spellweaver class.`);
 		if(has_spellweaver_class) {
-			console.log(`${CONSTANTS.MODULE_ID}|Spellweaver rolled a spell.`);
+			log(false, `Spellweaver rolled a spell.`);
 
 			 // do spellweaver stuff
 		}       
@@ -21,11 +21,11 @@ export async function doItemRoll(wrapped,
 	}
                               
   // any item roll will be wrapped
-  console.log(`${CONSTANTS.MODULE_ID}|rolling item`, this);
+  log(false, `rolling item`, this);
   const roll = await wrapped(options);
   
   // If user canceled or other error, resulting roll may be undefined.
   // Otherwise, should be chat content for the roll
-  console.log(`${CONSTANTS.MODULE_ID}|roll result`, roll);
+  log(false, `roll result`, roll);
   return roll;                                 
 }
