@@ -9,10 +9,11 @@ export const CONSTANTS = {
 };
 
 // used for logging before dev mode is set up
-export const FORCE_DEBUG = FALSE;
+export const FORCE_DEBUG = false;
 
 export function log(force: boolean, ...args) {
   try {
+    let window:any = {}; // for typescript
     const isDebugging = window.DEV?.getPackageDebugValue(CONSTANTS.MODULE_ID);
 
     if (force || isDebugging) {

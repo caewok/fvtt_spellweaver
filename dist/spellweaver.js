@@ -8,13 +8,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { itemPatching } from './scripts/patching.js';
-import { CONSTANTS } from "./scripts/constants.js";
+import { CONSTANTS, log, FORCE_DEBUG } from "./scripts/constants.js";
 /* ----------------
  * Initialize module
  */
 Hooks.once('init', function () {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(`${CONSTANTS.MODULE_ID}|Initializing.`);
+        log(FORCE_DEBUG, `Initializing.`);
     });
 });
 /* ----------------
@@ -23,7 +23,7 @@ Hooks.once('init', function () {
  */
 Hooks.once('setup', function () {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(`${CONSTANTS.MODULE_ID}|Setting up.`);
+        log(FORCE_DEBUG, `Setting up.`);
         itemPatching();
     });
 });
@@ -33,8 +33,15 @@ Hooks.once('setup', function () {
 Hooks.once('ready', function () {
     var _a;
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(`${CONSTANTS.MODULE_ID}|Readying.`);
+        log(FORCE_DEBUG, `Readying.`);
         if (!((_a = game.modules.get('lib-wrapper')) === null || _a === void 0 ? void 0 : _a.active) && game.user.isGM)
             ui.notifications.error(`Module ${CONSTANTS.MODULE_ID} requires the 'libWrapper' module. Please install and activate it.`);
     });
+});
+/* ----------------
+ * Other hooks
+ */
+Hooks.once('devModeReady', ({ registerPackageDebugFlag }) => {
+    // https://github.com/League-of-Foundry-Developers/foundryvtt-devMode
+    registerPackageDebugFlag('${CONSTANTS.MODULE_ID}');
 });
