@@ -9,7 +9,7 @@ export const CONSTANTS = {
 };
 
 // used for logging before dev mode is set up
-export const FORCE_DEBUG = true;
+export const FORCE_DEBUG:boolean = true;
 
 export function log(...args) {
   try {
