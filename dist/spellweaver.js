@@ -1,40 +1,33 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import { itemPatching } from './scripts/patching.js';
-import { CONSTANTS } from "./scripts/constants.js";
+import { CONSTANTS, log } from "./scripts/constants.js";
 /* ----------------
  * Initialize module
  */
-Hooks.once('init', function () {
-    return __awaiter(this, void 0, void 0, function* () {
-        console.log(`${CONSTANTS.MODULE_ID}|Initializing.`);
-    });
+Hooks.once('init', async function () {
+    log(`Initializing.`);
 });
 /* ----------------
  * Setup module.
  * Do anything after initialization but before ready
  */
-Hooks.once('setup', function () {
-    return __awaiter(this, void 0, void 0, function* () {
-        console.log(`${CONSTANTS.MODULE_ID}|Setting up.`);
-        itemPatching();
-    });
+Hooks.once('setup', async function () {
+    log(`Setting up.`);
+    itemPatching();
 });
 /* ----------------
  * When ready
  */
-Hooks.once('ready', function () {
+Hooks.once('ready', async function () {
     var _a;
-    return __awaiter(this, void 0, void 0, function* () {
-        console.log(`${CONSTANTS.MODULE_ID}|Readying.`);
-        if (!((_a = game.modules.get('lib-wrapper')) === null || _a === void 0 ? void 0 : _a.active) && game.user.isGM)
-            ui.notifications.error(`Module ${CONSTANTS.MODULE_ID} requires the 'libWrapper' module. Please install and activate it.`);
-    });
+    log(`Readying.`);
+    if (!((_a = game.modules.get('lib-wrapper')) === null || _a === void 0 ? void 0 : _a.active) && game.user.isGM)
+        ui.notifications.error(`Module ${CONSTANTS.MODULE_ID} requires the 'libWrapper' module. Please install and activate it.`);
+});
+/* ----------------
+ * Other hooks
+ */
+Hooks.once('devModeReady', ({ registerPackageDebugFlag }) => {
+    // https://github.com/League-of-Foundry-Developers/foundryvtt-devMode
+    log(`Readying devMode hook.`);
+    registerPackageDebugFlag('${CONSTANTS.MODULE_ID}');
 });
