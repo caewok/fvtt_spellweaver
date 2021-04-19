@@ -13,8 +13,8 @@ export const FORCE_DEBUG = true;
 
 export function log(...args) {
   try {
-    let window:any = {}; // for typescript
-    const isDebugging = window.DEV?.getPackageDebugValue(CONSTANTS.MODULE_ID);
+    let mywindow:any = window; // for typescript
+    const isDebugging:boolean = mywindow.DEV?.getPackageDebugValue(CONSTANTS.MODULE_ID);
     console.log(CONSTANTS.MODULE_ID, '|', `isDebugging: ${isDebugging}.`);
 
     if (FORCE_DEBUG || isDebugging) {
