@@ -14,8 +14,10 @@ export async function doItemRoll(wrapped,
 		log(`Checking for spellweaver class.`);
 		if(has_spellweaver_class) {
 			log(`Spellweaver rolled a spell.`);
-
-			 // do spellweaver stuff
+			// do spellweaver stuff
+			
+			let facet_check: FacetAbilityCheck = new FacetAbilityCheck();
+			facet_check.showFacetAbilityCheck();
 		}       
 	
 	}
