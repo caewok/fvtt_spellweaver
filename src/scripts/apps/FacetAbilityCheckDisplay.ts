@@ -4,7 +4,8 @@ export class FacetAbilityCheckDisplay extends FormApplication {
   }
   
   static get defaultOptions() {
-    // @ts-ignore
+  
+    // @ts-ignore 
     return mergeObject(super.defaultOptions, {
       title: "Spellweaver|Facet Ability Check",
       template: "modules/spellweaver/templates/facet-ability-check.html",
