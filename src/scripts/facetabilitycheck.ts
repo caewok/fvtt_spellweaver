@@ -10,6 +10,6 @@ export class FacetAbilityCheck {
   totalPoints: number;
   
   public showFacetAbilityCheck() {
-    new FacetAbilityCheckDisplay(this).render(true);
+    new FacetAbilityCheckDisplay(this, {}).render(true);
   }
 }

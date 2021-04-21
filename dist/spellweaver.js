@@ -18,9 +18,8 @@ Hooks.once('setup', async function () {
  * When ready
  */
 Hooks.once('ready', async function () {
-    var _a;
     log(`Readying.`);
-    if (!((_a = game.modules.get('lib-wrapper')) === null || _a === void 0 ? void 0 : _a.active) && game.user.isGM)
+    if (!game.modules.get('lib-wrapper')?.active && game.user.isGM)
         ui.notifications.error(`Module ${CONSTANTS.MODULE_ID} requires the 'libWrapper' module. Please install and activate it.`);
 });
 /* ----------------

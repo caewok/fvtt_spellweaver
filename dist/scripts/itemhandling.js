@@ -1,4 +1,5 @@
 import { CONSTANTS, log } from "./constants.js";
+import { FacetAbilityCheck } from "./facetabilitycheck.js";
 export async function doItemRoll(wrapped, options = { showFullCard: false,
     createWorkflow: true,
     versatile: false,
@@ -12,6 +13,8 @@ export async function doItemRoll(wrapped, options = { showFullCard: false,
         if (has_spellweaver_class) {
             log(`Spellweaver rolled a spell.`);
             // do spellweaver stuff
+            let facet_check = new FacetAbilityCheck();
+            facet_check.showFacetAbilityCheck();
         }
     }
     // any item roll will be wrapped
