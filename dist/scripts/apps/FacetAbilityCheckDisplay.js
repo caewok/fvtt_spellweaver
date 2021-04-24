@@ -1,12 +1,14 @@
+import { log } from "../constants.js";
 export class FacetAbilityCheckDisplay extends FormApplication {
     constructor(object, options) {
         super(object, options);
     }
     static get defaultOptions() {
-        // @ts-ignore
+        // @ts-ignore 
         return mergeObject(super.defaultOptions, {
             title: "Spellweaver|Facet Ability Check",
             template: "modules/spellweaver/templates/facet-ability-check.html",
+            classes: ['form'],
             id: "spellweaver-facet-check",
             width: 500,
             height: "auto",
@@ -20,5 +22,18 @@ export class FacetAbilityCheckDisplay extends FormApplication {
     }
     async _updateObject(event, formData) {
         return;
+    }
+    getData() {
+        let data = super.getData();
+        log("FacetAbilityCheckDisplay data", data);
+        return data;
+        //   return {
+        //     dc: 5,
+        //     numEnhancements: 2,
+        //     numModifications: 3
+        //  };
+    }
+    activateListeners(html) {
+        super.activateListeners(html);
     }
 }

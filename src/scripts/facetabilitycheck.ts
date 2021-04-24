@@ -21,6 +21,8 @@ export class FacetAbilityCheck {
     this.numModifications = 0;
     this.spell_level = spell.data.data.level;
     this.spell_slot = this.spell_level;
+
+    this.calculateDC();
   }
   
   public showFacetAbilityCheck() {

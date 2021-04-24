@@ -19,7 +19,7 @@ export async function doItemRoll(wrapped,
 			log(`Spellweaver rolled a spell.`);
 			// do spellweaver stuff
 			
-			let facet_check: FacetAbilityCheck = new FacetAbilityCheck();
+			let facet_check: FacetAbilityCheck = new FacetAbilityCheck(this, this.options.actor);
 			facet_check.showFacetAbilityCheck();
 		}       
 	

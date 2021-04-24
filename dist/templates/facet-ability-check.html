@@ -12,19 +12,24 @@
   </div>
   
   <div class="tab" data-tab="modifications">
-  This is the modifications tab.
-  <input type="number" id="SpellModificationSelection" class="Selection" min=0 max=9 step=1 value=0></input>
+  This is the modifications tab.<br>
+  Current Modifications: {{numModifications}} <br>
+  <input type="number" id="SpellModificationSelection" class="Selection" min=0 max=9 step=1 value={{numModifications}}></input>
   </div>
   
   <div class="tab" data-tab="enhancements">
-  This is the enhancements tab.
-  <input type="number" id="SpellEnhancementSelection" class="Selection" min=0 max=9 step=1 value=0></input>
+  This is the enhancements tab.<br>
+  Current Enhancements: {{numEnhancements}} <br>
+  <input type="number" id="SpellEnhancementSelection" class="Selection" min=0 max=9 step=1 value={{numEnhancements}}></input>
    
   </div>
   </section>  
 
   <footer>
-  This is a footer.
+  <hr>
+  DC: {{dc}}<br>
+  Facet Ability Check Roll: <br>
+  GM: {{isGM}}
   </footer>
 
 

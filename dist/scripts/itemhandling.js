@@ -13,7 +13,7 @@ export async function doItemRoll(wrapped, options = { showFullCard: false,
         if (has_spellweaver_class) {
             log(`Spellweaver rolled a spell.`);
             // do spellweaver stuff
-            let facet_check = new FacetAbilityCheck();
+            let facet_check = new FacetAbilityCheck(this, this.options.actor);
             facet_check.showFacetAbilityCheck();
         }
     }
