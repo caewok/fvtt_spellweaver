@@ -34,9 +34,9 @@ export class FacetAbilityCheckDisplay extends FormApplication {
    log("FacetAbilityCheckDisplay data", data);
    data.isGM = game.user.isGM;
    
-//   let out = {dc: 5, numEnhancements: 2, numModifications: 3};
-
-     return data;
+   let out = {dc: 5, numEnhancements: 2, numModifications: 3};
+   return out;
+   //  return data;
   }
 
   activateListeners(html) {
